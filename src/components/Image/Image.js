@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImgWrap = styled.div`
-  height: 6rem;
-  border-radius: 10;
+  height: 8rem;
+  border-radius: 10px;
   padding: 0 5px;
 `
 

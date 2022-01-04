@@ -20,7 +20,8 @@ const CollectionWrap = styled.div`
 `
 
 const BtnWrap = styled.div`
-  width: calc(100% / 6)
+  height: 8rem;
+  width: 190px;
 `
 
 const Collection = () => {
@@ -35,15 +36,15 @@ const Collection = () => {
 
   return <CollectionWrap>
       <Title>Approved images ({approvedImages.length})</Title>
-      {
-        isCollectionEmpty ?
-          <BtnWrap>
-            <AddButton onClick={onAddBtnClick}/>
-          </BtnWrap>
-        : <ScrollingCarousel className="slider">
-            {approvedImages.map((image, i) => <Image  key={`img-${i}`} src={image.urls.thumb} alt={image.description} />)}
-          </ScrollingCarousel>
-      }
+      <ScrollingCarousel className="slider">
+        {
+            isCollectionEmpty ? <BtnWrap>
+              <AddButton onClick={onAddBtnClick}/>
+            </BtnWrap>
+            : approvedImages.map((image, i) => <Image  key={`img-${i}`} src={image.urls.thumb} alt={image.description} />)
+        }
+      </ScrollingCarousel>
+
     </CollectionWrap>
 }
 
